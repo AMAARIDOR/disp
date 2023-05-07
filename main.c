@@ -8,8 +8,8 @@ void read_file(char *filename);
 // Main function
 int main(int argc, char *argv[]) {
     if (argc < 3 && argc > 1) {
+        // Right condition
         read_file(argv[1]);
-
         return 0;
     } else if (argc <= 1) {
         // Error condition
@@ -30,7 +30,6 @@ int main(int argc, char *argv[]) {
 void read_file(char *filename) {
     FILE* fp = fopen(filename, "r");
     char ch;
-
     do {
         ch = fgetc(fp);
         printf("%c", ch);
