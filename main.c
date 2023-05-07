@@ -2,17 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Function declaration
+void read_file(char *filename);
+
 // Main function
 int main(int argc, char *argv[]) {
-
-    FILE* fp = fopen("test.txt", "r");
-    char ch;
-
     if (argc < 3 && argc > 1) {
-        do {
-            ch = fgetc(fp);
-            printf("%c", ch);
-        } while (ch != EOF);
+        read_file(argv[1]);
 
         return 0;
     } else if (argc <= 1) {
@@ -28,4 +24,15 @@ int main(int argc, char *argv[]) {
     }
 
     return 0;
+}
+ 
+// Read file function
+void read_file(char *filename) {
+    FILE* fp = fopen(filename, "r");
+    char ch;
+
+    do {
+        ch = fgetc(fp);
+        printf("%c", ch);
+    } while (ch != EOF);
 }
