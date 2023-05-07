@@ -3,8 +3,9 @@
 
 // Main function
 int main(int argc, char *argv[]) {
-    if (argc > 1) {
-        printf("More than 1 argument\n");
+    if (argc < 3 && argc > 1) {
+        // Scenario for perfect number of arguments
+        printf("More than 1 argument but less than 2\n");
     } 
 
     return 0;
