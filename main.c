@@ -3,13 +3,13 @@
 #include <string.h>
 
 // Function declaration
-void read_file(char *filename);
+void fetch_file(char *filename);
 
 // Main function
 int main(int argc, char *argv[]) {
     if (argc < 3 && argc > 1) {
         // Right condition
-        read_file(argv[1]);
+        fetch_file(argv[1]);
         return 0;
     } else if (argc <= 1) {
         // Error condition
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 }
  
 // Read file function
-void read_file(char *filename) {
+void fetch_file(char *filename) {
     FILE* fp = fopen(filename, "r");
     char ch;
     do {
@@ -35,4 +35,5 @@ void read_file(char *filename) {
         printf("%c", ch);
     } while (ch != EOF);
     printf("\n");
+    fclose(fp);
 }
