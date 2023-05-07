@@ -13,12 +13,12 @@ int main(int argc, char *argv[]) {
         return 0;
     } else if (argc <= 1) {
         // Error condition
-        fprintf(stderr, "ERORR: Need at least 1 argument.\n");
+        fprintf(stderr, "ERROR: Need at least 1 argument.\n");
 
         return 1;
     } else if (argc >= 3) {
         // Error condition
-        fprintf(stderr, "ERORR: Too many arguments.\n");
+        fprintf(stderr, "ERROR: Too many arguments.\n");
 
         return 1;
     }
