@@ -29,11 +29,16 @@ int main(int argc, char *argv[]) {
 // Read file function
 void fetch_file(char *filename) {
     FILE* fp = fopen(filename, "r");
-    char ch;
-    do {
-        ch = fgetc(fp);
-        printf("%c", ch);
-    } while (ch != EOF);
-    printf("\n");
-    fclose(fp);
+
+    if (fp != NULL) {
+        char ch;
+        do {
+            ch = fgetc(fp);
+            printf("%c", ch);
+        } while (ch != EOF);
+        printf("\n");
+        fclose(fp);
+    } else {
+        printf("ERROR: File not found.\n");
+    }
 }
